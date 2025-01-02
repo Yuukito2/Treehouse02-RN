@@ -20,8 +20,7 @@ const Tutorial = ({navigation}) => {
             <Image source={require('../../assets/icons/add_your_info.png')} />
           ),
           title: 'Create an account',
-          subtitle:
-            'Et adipisicing do enim duis amet id culpa. Commodo adipisicing.',
+          subtitle: 'Create Your Account',
         },
         {
           backgroundColor: '#fff',
@@ -34,9 +33,8 @@ const Tutorial = ({navigation}) => {
           image: (
             <Image source={require('../../assets/icons/add_to_cart.png')} />
           ),
-          title: 'Add to Cart',
-          subtitle:
-            'Ipsum officia eu amet Lorem amet pariatur culpa reprehenderit esse irure.',
+          title: 'Find Yours',
+          subtitle: 'Find your favourite furniture',
         },
         {
           backgroundColor: '#fff',
@@ -48,8 +46,7 @@ const Tutorial = ({navigation}) => {
           },
           image: <Image source={require('../../assets/icons/payment.png')} />,
           title: 'Payment',
-          subtitle:
-            'Nisi eiusmod officia amet veniam veniam ex laborum duis sit commodo.',
+          subtitle: 'Various ways of payment',
         },
       ]}
     />

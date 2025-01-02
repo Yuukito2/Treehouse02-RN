@@ -21,6 +21,7 @@
     "@react-navigation/stack": "^6.3.8",
     "axios": "^1.2.1",
     "deprecated-react-native-prop-types": "^3.0.1",
+    "guzel": "file:",
     "link": "^1.5.1",
     "mobx": "^6.7.0",
     "mobx-react": "^7.6.0",

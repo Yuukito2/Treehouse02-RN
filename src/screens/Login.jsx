@@ -1,42 +1,41 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   Image,
-  Text,
   Pressable,
+  Text,
+  TextInput,
   TouchableOpacity,
   View,
-  StyleSheet,
+  ToastAndroid,
   ScrollView,
 } from 'react-native';
 import Input from '../components/Input';
-
-import {PrimaryColor, SecondaryColor} from '../styles/theme';
 import styles from '../styles';
-import {faUser, faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import Svg, {Path} from 'react-native-svg';
 
 import {AuthStore} from '../store/auth';
+import {PrimaryColor, SecondaryColor} from '../styles/theme';
 
-const Signup = ({navigation}) => {
-  const [name, setName] = useState('');
+import {faUser, faLock} from '@fortawesome/free-solid-svg-icons';
+import Svg, {Path} from 'react-native-svg';
+
+const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const onSubmit = async () => {
-    AuthStore.register({
-      email: email,
-      password: password,
-      name: name,
-    });
+    AuthStore.login({email: email, password: password});
   };
 
   return (
     <View style={styles.container}>
-      <Image
-        style={{width: 200, height: 200}}
-        source={require('../../assets/icons/Login.jpg')}
-      />
-      <ScrollView style={{...styles.form}}>
+      <View style={{marginVertical: 30}}>
+        <Image
+          style={{width: 200, height: 200}}
+          source={require('../../assets/icons/Login.jpg')}
+        />
+      </View>
+
+      <ScrollView style={styles.form}>
         <Text
           style={{
             textAlign: 'center',
@@ -45,54 +44,43 @@ const Signup = ({navigation}) => {
             color: '#000',
             marginBottom: 20,
           }}>
-          Create an account
+          Sign in
         </Text>
 
         <Input
-          text={name}
-          setText={setName}
-          placeholder="Enter name"
-          icon={faUser}
-        />
-        <Input
           text={email}
           setText={setEmail}
+          icon={faUser}
           placeholder="Enter email"
-          icon={faEnvelope}
         />
+
         <Input
-          password={true}
           text={password}
           setText={setPassword}
           placeholder="Enter password"
+          password={true}
           icon={faLock}
         />
 
         <Pressable
           style={{alignSelf: 'flex-end', marginVertical: 10}}
-          onPress={() => navigation.navigate('login')}>
+          onPress={() => navigation.navigate('signup')}>
           <Text
             style={{
               color: 'gray',
               textDecorationColor: 'gray',
               textDecorationLine: 'underline',
             }}>
-            Already have an account
+            Create an account
           </Text>
         </Pressable>
 
-        <TouchableOpacity
-          style={styles.primaryBtn}
-          onPress={() => {
-            // Register();
-            // navigation.navigate('Dashboard', {parama: [], auth: true});
-            onSubmit();
-          }}>
-          <Text style={{color: '#fff'}}>Submit</Text>
+        <TouchableOpacity style={styles.primaryBtn} onPress={() => onSubmit()}>
+          <Text style={{...styles.btnTextPrimary, color: '#fff'}}>Submit</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
   );
 };
 
-export default Signup;
+export default Login;

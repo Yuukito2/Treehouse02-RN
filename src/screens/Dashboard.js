@@ -53,13 +53,13 @@ const Dashboard = ({navigation}) => {
           style={searching ? styles.searchInputFocused : styles.searchInput}
           onFocus={() => setSearching(true)}
           onBlur={() => setSearching(false)}
-          selectionColor="#000"
+          selectionColor="#0000"
         />
         <TouchableOpacity
           onPress={() => searchText.length > 0 && setSearched(true)}
           style={styles.searchBtn}>
           <FontAwesomeIcon
-            style={{color: '#000', marginRight: 10}}
+            style={{color: '#0000', marginRight: 10}}
             icon={faSearch}
           />
         </TouchableOpacity>

@@ -28,7 +28,7 @@ const Profile = ({navigation}) => {
             uri: 'https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png',
           }}
         />
-        <Text style={styles.profileName}>Musabbiha Noor</Text>
+        <Text style={styles.profileName}>Admin</Text>
       </View>
 
       <View style={styles.menuOptions}>
